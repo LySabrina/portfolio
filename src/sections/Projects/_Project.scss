@@ -1,0 +1,20 @@
+.project{
+    background-color: blue;
+    padding:1rem;
+    margin: 1em 0px;
+
+    &_details > *{
+        margin: 1rem 0;
+    }
+    
+    &__tags{
+        list-style: none;
+        display:flex;
+    }
+
+    &__tag{
+        border: 2px solid black;
+        margin-right:1em;
+        padding:0.5em;
+    }
+}

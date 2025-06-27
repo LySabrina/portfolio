@@ -1,0 +1,23 @@
+nav{
+    ul{
+        list-style-type: none;
+        display:flex;
+        justify-content: center;
+    }
+    li{
+        margin: 0px 1rem;
+    }
+    li > a{
+        text-decoration: none;
+    }
+}
+
+#theme-switcher{
+    cursor:pointer
+}
+
+@media screen and (min-width: 1000px) {
+    nav{
+        color:blue
+    }
+}
