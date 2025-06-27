@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Projects from './sections/Projects/Projects'
 import Contacts from './sections/Contacts/Contacts'
 import Hero from './sections/Hero/Hero'
-import "./styles/style.scss"
+import "../style.css"
 function App() {
 
   return (

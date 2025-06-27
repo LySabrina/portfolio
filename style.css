@@ -1,0 +1,77 @@
+.contacts {
+  list-style: none;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  margin: 0px 1rem;
+}
+nav li > a {
+  text-decoration: none;
+}
+
+#theme-switcher {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    color: blue;
+  }
+}
+.project {
+  padding: 1rem;
+  margin: 1em 0px;
+  border-radius: 0.5rem;
+}
+.project_details > * {
+  margin: 1rem 0;
+}
+.project__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.project__tag {
+  border: 2px solid black;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body {
+  margin: 1rem;
+  min-height: 100vh;
+}
+
+.dark-theme {
+  background-color: #0d1b32;
+}
+.dark-theme .project {
+  background-color: #071525;
+}
+
+.light-theme {
+  background-color: #eee8d5;
+}
+.light-theme .project {
+  background-color: #fdf9ee;
+}
+
+/*# sourceMappingURL=style.css.map */

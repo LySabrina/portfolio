@@ -1,12 +1,13 @@
-@use '../components/Navbar';
-@use '../sections/Projects/Project';
-@use "./function";
+@use "./Contacts";
+@use './Navbar';
+@use './Project';
+@use './themes';
 @use "./mixin";
-@use './theme';
+
 
 @font-face {
     font-family:"Inter";
-    src: url("../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+    src: url("../assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
 }
 *{
     margin:0;
@@ -18,8 +19,15 @@
 body{
     margin:1rem;
     min-height:100vh;
+
 }
 
-// @include themify($themes) {
-//     background-color: themed("main-bg");
-// }
+@include mixin.themify(themes.$themes) {
+
+    background-color: mixin.themed("main-bg");
+    
+    .project{
+        background-color: mixin.themed("card-bg");
+    }
+
+}
