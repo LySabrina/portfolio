@@ -1,10 +1,16 @@
 $themes:(
     dark:(
         main-bg:#0d1b32,
-        card-bg: #071525
+        card-bg: #071525,
+        text-color: white,
+        live-color: #fcd37a,
+        source-color :green
     ),
     light:(
         main-bg:#eee8d5,    
         card-bg: #fdf9ee,
+        text-color:black,
+        live-color: #fcd37a,
+        source-color :green
     )
 )

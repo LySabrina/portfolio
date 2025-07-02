@@ -2,9 +2,9 @@ import Project from "./Project";
 import projects  from "../../data/projects";
 function Projects(){
     return(
-        <section>
+        <section id="projects" className="section">
             <h1>Projects</h1>
-
+            
             <div>
             {
                 projects.map((project, index)=>(
