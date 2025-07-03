@@ -1,15 +1,20 @@
-import { useEffect, useState } from "react";
-import HamburgerIcon from "../assets/images/hamburger.svg?react";
+import { useState, useRef } from "react";
 import MoonIcon from "../assets/images/moon.svg?react";
 import SunIcon from "../assets/images/sun.svg?react";
 import BlogIcon from "../assets/images/blog.svg?react";
 import ContactIcon from "../assets/images/contact.svg?react";
 import ProjectIcon from "../assets/images/laptop_code.svg?react";
-import { getImageURL } from "../utils/image-util";
-function Navbar({ hamburgerOpen }) {
+import { CSSTransition } from "react-transition-group";
+
+/**
+ * Navbar component.
+ * Related to all navigation of the website and theme changer 
+ * @returns Navbar
+ */
+function Navbar() {
   const body = document.body;
+  const ulRef = useRef(null);
   const [currentLink, setCurrentLink] = useState("Projects");
-  const [currentLinkIcon, setCurrentLinkIcon] = useState("laptop_code.svg");
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("light");
   const sectionHeaders = document.querySelectorAll(".section");
@@ -54,41 +59,21 @@ function Navbar({ hamburgerOpen }) {
     setOpen((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    switch (currentLink) {
-      case "Projects":
-        setCurrentLinkIcon(getImageURL("laptop_code.svg"));
-        break;
 
-      case "Contact Me":
-        setCurrentLinkIcon(getImageURL("contact.svg"));
-      default:
-        break;
-    }
-  }, [currentLink]);
-  const iconType = (linkName) => {};
 
-  /**
-   *
-   * IDEA: have the navigation bar change name depending where you are on the screen
-   *
-   *
-   */
   return (
     <nav className="nav">
       {open ? (
         <CSSTransition
-          in={open}
-          timeout={
-            {
-              enter:0,
-              exit:2000
-            }
-            
-          }
+        nodeRef={ulRef}  
+        in={open}
+          timeout={{enter:0, exit:200}}
           unmountOnExit
+          onEnter={()=>{setOpen(true)}}
+          onExit={()=>setOpen(false)}
+          className ="nav-links"
         >
-          <ul className={`nav-links`}>
+          <ul className={`nav-links`} ref={ulRef}>
             <li className="nav-link">
               <a href="#projects">
                 <ProjectIcon className="svg-icon" />
@@ -102,8 +87,9 @@ function Navbar({ hamburgerOpen }) {
               </a>
             </li>
             <li className="nav-link">
-              <a href="">
+              <a href="#">
                 <BlogIcon className="svg-icon" />
+                Blog
                 [Work in Progress]
               </a>
             </li>
@@ -114,7 +100,11 @@ function Navbar({ hamburgerOpen }) {
         </CSSTransition>
       ) : (
         <button onClick={toggleNav} className="nav__btn">
-          <img src={currentLinkIcon} alt="Link" className="svg-icon" />
+          {currentLink === "Projects" ? (
+            <ProjectIcon className="svg-icon" />
+          ) : (
+            <ContactIcon className="svg-icon" />
+          )}
           {currentLink}
         </button>
       )}

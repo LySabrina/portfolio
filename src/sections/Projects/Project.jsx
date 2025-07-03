@@ -3,7 +3,6 @@ import ExternalIcon from "../../assets/images/external.svg?react";
 import CodeIcon from "../../assets/images/code.svg?react";
 
 function Project({ title, description, img, tags, links }) {
-  console.log(tags);
   return (
     <div className="project">
       <section className="project__img-container">
@@ -20,7 +19,7 @@ function Project({ title, description, img, tags, links }) {
             return (
               <li key={index} className="project__tag">
                 {keys[0]}
-                <span className="project__tag-img-container">     
+                <span className="project__tag-img-container">
                   <img src={url} alt={keys} />
                 </span>
               </li>
@@ -29,12 +28,18 @@ function Project({ title, description, img, tags, links }) {
         </ul>
 
         <section className="project__btns">
-          <a href={links.demo ? links.demo : ""} target="_blank" className="anchor-link">
-            <button className="project__btn project__btn--live">
-              Live Demo
-              <ExternalIcon className="svg-icon" />
-            </button>
-          </a>
+          {links.demo && (
+            <a
+              href={links.demo ? links.demo : ""}
+              target="_blank"
+              className="anchor-link"
+            >
+              <button className="project__btn project__btn--live">
+                Live Demo
+                <ExternalIcon className="svg-icon" />
+              </button>
+            </a>
+          ) }
 
           <a href={links.github} target="_blank" className="anchor-link">
             <button className="project__btn project__btn--source">

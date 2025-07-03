@@ -1,58 +1,89 @@
-.project{
-    padding:1rem;
-    margin: 1em 0px;
-    border-radius:0.5rem;
+.project {
+  padding: 1rem;
+  margin: 1em 0px;
+  border-radius: 0.5rem;
 
-    &__img-container{
-        width:100%;
+  &__img-container {
+    width: 100%;
 
-        img{
-            width:100%;
-            border-radius: 0.5rem;
-        }
+    img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &_details > * {
+    margin: 1rem 0;
+  }
+
+  &__tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__tag {
+    width: 33%;
+    max-width: 45%; //not 50% b/c some reason it extends outwards and the boxes are not aligned
+    border: 2px solid black;
+
+    padding: 0.5em;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-img-container {
+      display: block;
+      max-width: 2rem;
+      min-width: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    max-width: 7rem;
+
+   
+  }
+}
+
+
+@media screen and (min-width: 958px) {
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .project {
+    max-width: 75%;
+    display: flex;
+    gap: 1rem;
+
+    > * {
+      flex: 1;
     }
 
-
-    &_details > *{
-        margin: 1rem 0;
+    &__img-container {
+      img {
+        object-fit: contain;
+        height:100%;
+      }
     }
-    
-    &__tags{
-        list-style: none;
-        display:flex;
-        flex-wrap: wrap;
-    }
-
-    &__tag{
-        border: 2px solid black;
-        margin-right:1em;
-        margin-top: 1em;
-        margin-bottom:1em;
-        padding:0.5em;
-        flex:1 1 0px;
-        display:flex;
-        justify-content: center;
-        align-items:center;      
-          
-        &-img-container{
-            display:block;
-            max-width:2rem;
-            min-width:1rem;
-            img{
-                width:100%;
-            }
-        }
-    }
-
-
-
-    &__btn{
-        padding:0.5rem;
-        margin-right:1rem;
-        cursor: pointer;
-        border-radius:0.5rem;
-      
-    }
-
-
+  }
 }

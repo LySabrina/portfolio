@@ -3,14 +3,23 @@ $themes:(
         main-bg:#0d1b32,
         card-bg: #071525,
         text-color: white,
+
         live-color: #fcd37a,
-        source-color :green
+        live-bg: #1f1f1f,
+
+        source-color:#fcd37a,
+        source-bg:  #1f1f1f, 
+        
     ),
     light:(
         main-bg:#eee8d5,    
         card-bg: #fdf9ee,
         text-color:black,
-        live-color: #fcd37a,
-        source-color :green
+        live-color:#508bc6,
+        live-bg: #fdf9ee,
+
+
+        source-color :#508bc6,
+        source-bg: #fdf9ee
     )
 )

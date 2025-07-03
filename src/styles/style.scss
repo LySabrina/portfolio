@@ -14,6 +14,9 @@
   box-sizing: border-box;
   font-family: "Inter";
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   min-height: 100vh;
@@ -26,18 +29,15 @@ body {
 
 .section {
   margin: 1rem 0px;
-
   h1 {
     margin: 0.5rem 0px;
   }
 }
 
-
-.svg-icon{
-    max-width:1rem;
-    
+.svg-icon {
+  max-width: 1rem;
 }
- 
+
 .anchor-link {
   text-decoration: none;
   cursor: pointer;
@@ -60,13 +60,22 @@ footer {
   }
   nav {
     background-color: mixin.themed("main-bg");
+    border-bottom: 1px solid mixin.themed("text-color");
   }
-  .nav-link {
-    a {
-      color: mixin.themed("text-color");
-      &:visited {
-        text-decoration: none;
+
+  .nav {
+    &-link {
+      a {
+        color: mixin.themed("text-color");
+        &:visited {
+          text-decoration: none;
+        }
       }
+    }
+
+    &__btn {
+      color: mixin.themed("text-color");
+      fill: white;
     }
   }
 
@@ -78,19 +87,26 @@ footer {
     }
 
     &__btn {
-      color: mixin.themed("text-color");
       background-color: mixin.themed("main-bg");
-      border:2px solid mixin.themed("text-color");
-      box-shadow: 0px 5px 10px mixin.themed('text-color');
+      border: 2px solid mixin.themed("text-color");
+      box-shadow: 0px 10px 15px rgba(mixin.themed("text-color"), 0.3);
+      // box-shadow: 0px 5px 10px mixin.themed("text-color");
+      &--live {
+        color: mixin.themed("live-color");
+        background-color: mixin.themed("live-bg");
+      }
+      &--source{
+        color: mixin.themed("source-color");
+        background-color: mixin.themed("source-bg");
+      }
     }
   }
 
-  .svg-icon{
+  .svg-icon {
     fill: mixin.themed("text-color");
-    
   }
 
-  #theme-switcher{
+  #theme-switcher {
     fill: mixin.themed("live-color");
   }
 }
