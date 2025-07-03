@@ -109,4 +109,19 @@ footer {
   #theme-switcher {
     fill: mixin.themed("live-color");
   }
+  .btn--resume{
+       color: mixin.themed("live-color");
+  }
+
+  .resume-icon{
+    display:block;
+    margin: 0 auto;
+  }
+  .resume-container{
+    margin: 1rem 0px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:1rem;
+  }
 }

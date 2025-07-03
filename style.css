@@ -249,6 +249,20 @@ footer p {
 .dark-theme #theme-switcher {
   fill: #fcd37a;
 }
+.dark-theme .btn--resume {
+  color: #fcd37a;
+}
+.dark-theme .resume-icon {
+  display: block;
+  margin: 0 auto;
+}
+.dark-theme .resume-container {
+  margin: 1rem 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
 .light-theme {
   color: black;
@@ -295,6 +309,20 @@ footer p {
 }
 .light-theme #theme-switcher {
   fill: #508bc6;
+}
+.light-theme .btn--resume {
+  color: #508bc6;
+}
+.light-theme .resume-icon {
+  display: block;
+  margin: 0 auto;
+}
+.light-theme .resume-container {
+  margin: 1rem 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

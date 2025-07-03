@@ -15,13 +15,16 @@ It displays each products:
 
 ## Image Demo
 > Desktop Dark Node
+
 ![Desktop Dark Mode](/demo/Desktop_Dark.png)
 
 
 > Desktop Light Mode
+
 ![Desktop Light Mode](/demo/Desktop_Light.png)
 
 > Mobile Mode
+
 ![Mobile Mode](/demo/Mobile_Dark.png)
 # Inspirations!
 Some very cool websites I have taken inspiration from:
